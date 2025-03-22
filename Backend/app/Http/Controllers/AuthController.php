@@ -19,30 +19,21 @@ class AuthController extends Controller
 
         $token = Auth::attempt($credentials);
         if (!$token) {
-            return response()->json([
-                "success" => false,
-                "error" => "Unauthorized Access"
-            ], 401);
+            return errorMessageResponse(false, "error", "Unauthorized Access", 401);            
         }
 
         $user = Auth::user();
-        return response()->json([
-                'status' => 'success',
-                'user' => $user,
-                'authorisation' => [
-                    'token' => $token,
-                    'type' => 'bearer',
-                ]
-            ]);
+        $user->token=$token;
+        return messageResponse(true, "Login Successful", 200, $user);
 
     }
 
     function signup(Request $request){
         try{
             $request->validate([
-                'name' => 'required|string|max:15',
+                'name' => 'required|string|max:30',
                 'email' => 'required|string|email|max:255|unique:users',
-                'password' => 'required|string|min:6',
+                'password' => 'required|string|min:8',
             ]);
     
             $user = new User; 
@@ -51,42 +42,31 @@ class AuthController extends Controller
             $user->password = bcrypt($request["password"]);
             $user->save();
             $user->token = Auth::login($user);
-            return response()->json([
-                'status' => 'success',
-                'message' => 'User created successfully',
-                'user' => $user
-            ]);
+            return messageResponse(true, "User created successfully", 200, $user);
         } catch (Throwable $e) {
-            return response()->json([
-                "success" => false,
-                "error" => "False credentials",
-                "message" => $e->getMessage()
-            ], 401);
+            return errorMessageResponse(true, "False credentials", $e->getMessage(), 401);
         }
-
-        // return response()->json([
-        //     "success" => true
-        // ]);
     }
 
     public function logout()
     {
         Auth::logout();
+        return messageResponse(true, "Successfully logged out", 200);
+    }
+
+    public function all(Request $request)
+    {
         return response()->json([
-            'status' => 'success',
-            'message' => 'Successfully logged out',
+            "all" => User::all()
         ]);
     }
 
     public function refresh()
     {
-        return response()->json([
-            'status' => 'success',
-            'user' => Auth::user(),
-            'authorisation' => [
-                'token' => Auth::refresh(),
-                'type' => 'bearer',
-            ]
-        ]);
+        $token = Auth::refresh();
+        $user = Auth::user();
+        $user->token = $token;
+        $user->type = "bearer";
+        messageResponse(true, "refreshed", 200, $user);
     }
 }

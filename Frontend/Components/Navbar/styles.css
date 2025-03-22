@@ -1,0 +1,40 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #007BFF; /* Blue background */
+    color: white;
+    font-family: Arial, sans-serif;
+    position: relative;
+  }
+  
+  .navbar-title {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+  
+  .navbar-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  /* Make the navbar responsive */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 1rem;
+      flex-direction: column; /* Stack the elements vertically on smaller screens */
+      text-align: center;
+    }
+  
+    .navbar-title {
+      font-size: 1.5rem; /* Reduce the title size on smaller screens */
+    }
+  
+    .navbar-right {
+      margin-top: 10px; /* Add space between title and button */
+    }
+  }
+  

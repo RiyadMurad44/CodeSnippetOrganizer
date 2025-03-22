@@ -24,7 +24,7 @@ jobs:
               git pull origin main
               cd slack-test/
               cp .env.example .env
-              # php artisan key:generate
+              php artisan key:generate
               php artisan config:clear
               php artisan cache:clear
               php artisan route:clear
