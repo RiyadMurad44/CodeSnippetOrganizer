@@ -1,7 +1,10 @@
-const handleLogout = async (e) => {
+// navbarHandlerLogout.js
+import axiosBaseUrl from "../Axios/axiosConfig";
+
+const handleLogout = async (e, navigate) => {
   try {
     e.preventDefault();
-    const response = await axiosBaseUrl.delete("/users/logout");
+    const response = await axiosBaseUrl.post("/users/logout");
     localStorage.clear();
     navigate("/");
   } catch (error) {

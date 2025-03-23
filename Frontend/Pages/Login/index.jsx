@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import "./styles.css";
+import { useState } from "react";
 import axiosBaseUrl from "../../Axios/axiosConfig";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,7 +15,8 @@ const Login = () => {
         email,
         password,
       });
-      const token = response.data.user.token;
+      console.log(response);
+      const token = response.data.data.token;
       localStorage.setItem("token", token);
       navigate("/home");
 
