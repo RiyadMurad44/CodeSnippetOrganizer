@@ -18,7 +18,7 @@ class SnippetFactory extends Factory
     {
         return [
             'user_id'  => \App\Models\User::factory(),
-            'code_snippet' => fake()->text(1000),
+            'code_snippet' => fake()->text(50),
             'language' => fake()->text(20),
             'keywords' => fake()->text(30)
         ];

@@ -19,7 +19,7 @@ class AuthController extends Controller
 
         $token = Auth::attempt($credentials);
         if (!$token) {
-            return errorMessageResponse(false, "error", "Unauthorized Access", 401);            
+            return errorMessageResponse(false, "Access Error", "Unauthorized Access", 401);            
         }
 
         $user = Auth::user();
