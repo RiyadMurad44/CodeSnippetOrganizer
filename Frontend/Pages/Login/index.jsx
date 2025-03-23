@@ -11,16 +11,12 @@ const Login = () => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      console.log("Email:", email, "Password:", password);
       const response = await axiosBaseUrl.post("/login", {
         email,
         password,
       });
       const token = response.data.user.token;
       localStorage.setItem("token", token);
-
-      console.log(response);
-
       navigate("/home");
 
     } catch (error){
