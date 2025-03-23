@@ -1,11 +1,12 @@
 import React from "react";
 import "./addSnippetStyles.css"
 
-const add_Snippet = () => {
-  return( <div>
+const Add_Snippet = () => {
+  return( 
+  <div>
 
   </div>
   );
 };
 
-export default add_Snippet;
+export default Add_Snippet;
