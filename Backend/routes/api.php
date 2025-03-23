@@ -8,15 +8,21 @@ use App\Http\Controllers\SnippetController;
 Route::group(['prefix' => 'v1'], function(){
     //Authorized Users
     Route::group(["middleware" => "auth:api"], function () {
+        Route::group(["prefix" => "users"], function () {
+            Route::group(["prefix" => "snippets"], function () {
 
-        Route::group(["prefix" => "snippets"], function () {
-            Route::get("/allSnippets/{id?}", [SnippetController::class, "all"]);
-            Route::post("/addSnippet", [SnippetController::class, "addSnippet"]);
-            Route::delete("/deleteSnippet/{id}", [SnippetController::class, "deleteSnippet"]);
-            Route::post("/editSnippet", [SnippetController::class, "editSnippet"]);
+                //Snippet codes
+                Route::get("/allSnippets/{id?}", [SnippetController::class, "all"]);
+                Route::post("/addSnippet", [SnippetController::class, "addSnippet"]);
+                Route::delete("/deleteSnippet/{id}", [SnippetController::class, "deleteSnippet"]);
+                Route::post("/editSnippet", [SnippetController::class, "editSnippet"]);
+            });
+            
+            //User Profiles
+            Route::post("/editProfile", [UserController::class, "editProfile"]);
+            Route::delete("/deleteProfile/{id}", [UserController::class, "deleteProfile"]);
         });
 
-        
     });
 
     //Unauthorized Users
