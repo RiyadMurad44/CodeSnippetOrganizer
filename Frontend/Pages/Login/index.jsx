@@ -12,7 +12,7 @@ const Login = () => {
     try {
       e.preventDefault();
       console.log("Email:", email, "Password:", password);
-      const response = await axiosBaseUrl.post("/users/login", {
+      const response = await axiosBaseUrl.post("/login", {
         email,
         password,
       });

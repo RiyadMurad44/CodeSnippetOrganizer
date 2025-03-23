@@ -14,7 +14,7 @@ const Signup = () => {
       e.preventDefault();
       console.log("Full Name:", name, "Email:", email, "Password:", password);
 
-      const response = await axiosBaseUrl.post("/users/signup", {
+      const response = await axiosBaseUrl.post("/signup", {
         name,
         email,
         password,
