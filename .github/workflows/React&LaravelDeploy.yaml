@@ -34,7 +34,7 @@ jobs:
 
       - name: Copy dist folder to root
         run: |
-          cp -r ./CodeSnippetOrganizer/Frontend/dist ./dist
+          cp -r ./Frontend/dist ./dist
           
       - name: Check dist directory
         run: ls -al ./dist  
