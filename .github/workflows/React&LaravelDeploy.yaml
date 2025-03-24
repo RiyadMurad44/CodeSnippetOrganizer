@@ -18,21 +18,18 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Check Node.js version
-        run: node -v
-
-      - name: Check npm version
-        run: npm -v
-
       - name: Install dependencies
         run: npm install
+        working-directory: ./CodeSnippetOrganizer/Frontend
 
       - name: Build React app
         run: npm run build
+        working-directory: ./CodeSnippetOrganizer/Frontend
 
       - name: Create tar archive
         run: |
           tar -czf build.tar.gz dist
+        working-directory: ./CodeSnippetOrganizer/Frontend
 
       - name: Copy build to EC2
         uses: appleboy/scp-action@v0.1.4
