@@ -23,7 +23,8 @@ jobs:
           cd Frontend && npm install
 
       - name: Build React app
-        run: npm run build
+        run: |
+          cd Frontend && npm run build
 
       - name: Create tar archive
         run: |
