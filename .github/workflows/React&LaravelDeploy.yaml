@@ -47,7 +47,8 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             echo "Unpacking and deploying..."
-            tar -xzf /home/${{ secrets.EC2_USER }}/build.tar.gz/build.tar.gz -C /var/www/html/CodeSnippetOrganizer/Frontend
+            # tar -xzf /home/${{ secrets.EC2_USER }}/build.tar.gz/build.tar.gz -C /var/www/html/CodeSnippetOrganizer/Frontend
+            tar -xzf /home/${{ secrets.EC2_USER }}/build.tar.gz -C /var/www/html/CodeSnippetOrganizer/Frontend
             sudo rm -rf /home/${{ secrets.EC2_USER }}/build.tar.gz
             sudo systemctl restart apache2
             echo "Deployment completed!"
