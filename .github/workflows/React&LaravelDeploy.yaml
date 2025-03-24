@@ -30,18 +30,19 @@ jobs:
 
       - name: Build React app
         run: npm run build
-        working-directory: ./Frontend  
-
-      - name: Build React app
-        run: |
-          npm run build
-          ls -al ./Frontend/dist  
         working-directory: ./Frontend
+
+      - name: Copy dist folder to root
+        run: |
+          cp -r ./CodeSnippetOrganizer/Frontend/dist ./dist
+          
+      - name: Check dist directory
+        run: ls -al ./dist  
 
       - name: Create tar archive
         run: |
           tar -czf build.tar.gz dist
-        working-directory: ./CodeSnippetOrganizer/Frontend
+        working-directory: ./  
 
       - name: Check dist directory
         run: |
