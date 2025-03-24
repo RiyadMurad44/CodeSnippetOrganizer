@@ -35,8 +35,8 @@ jobs:
       - name: Build React app
         run: |
           npm run build
-          ls -al ./CodeSnippetOrganizer/Frontend/dist  
-        working-directory: ./CodeSnippetOrganizer/Frontend
+          ls -al ./Frontend/dist  
+        working-directory: ./Frontend
 
       - name: Create tar archive
         run: |
