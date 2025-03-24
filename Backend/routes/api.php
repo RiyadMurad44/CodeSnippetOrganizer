@@ -13,6 +13,7 @@ Route::group(['prefix' => 'v1'], function(){
             Route::group(["prefix" => "snippets"], function () {
                 //Snippet codes
                 Route::get("/allSnippets/{id?}", [SnippetController::class, "all"]);
+                Route::get("/allUserSnippets", [SnippetController::class, "allUserSnippets"]);
                 Route::post("/addSnippet", [SnippetController::class, "addSnippet"]);
                 Route::post("/editSnippet", [SnippetController::class, "editSnippet"]);
                 Route::delete("/deleteSnippet/{id}", [SnippetController::class, "deleteSnippet"]);

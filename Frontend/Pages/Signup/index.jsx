@@ -21,7 +21,7 @@ const Signup = () => {
         
       });
 
-      const token = response.data.user.token;
+      const token = response.data.data.token;
       localStorage.setItem("token", token);
 
       console.log("responsing: ", response);
