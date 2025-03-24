@@ -1,0 +1,114 @@
+/* Snippet Card container */
+.snippet-card {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Hover effect */
+.snippet-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Code snippet formatting */
+.snippet-card-code-snippet {
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #333;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 0;
+  overflow: auto;
+}
+
+.snippet-card-code-snippet code {
+  display: block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 0.5rem;
+  background-color: #282c34;
+  color: #fff;
+  border-radius: 5px;
+  margin: 0;
+}
+
+/* Heading styling */
+.snippet-card h3 {
+  font-size: 1.2em;
+  margin: 0;
+  color: #333;
+}
+
+/* Styling for inputs */
+.snippet-card-input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.snippet-card-language,
+.snippet-card-keywords {
+  margin-bottom: 16px;
+}
+
+.snippet-card-language {
+  font-weight: bold;
+}
+
+.snippet-card-keywords {
+  font-style: italic;
+}
+
+/* Buttons styling */
+.edit-snippet-btn,
+.delete-snippet-btn {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin-top: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.edit-snippet-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-snippet-btn {
+  background-color: #dc3545;
+}
+
+.delete-snippet-btn:hover {
+  background-color: #c82333;
+}
+
+/* Ensure buttons are aligned within the form */
+.snippet-card .button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.snippet-card .button-container button {
+  width: 48%;
+}

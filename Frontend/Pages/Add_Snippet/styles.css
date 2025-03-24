@@ -1,0 +1,100 @@
+/* Container for the form */
+.add-snippet-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form heading */
+  .add-snippet-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Styling for the input fields */
+  .add-snippet-form .input-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .add-snippet-form label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #333;
+  }
+  
+  .add-snippet-form input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+  
+  .add-snippet-form input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Styling for the code snippet textarea */
+  .add-snippet-form textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    resize: vertical; /* Allows resizing vertically */
+  }
+  
+  /* Focus effect for textarea */
+  .add-snippet-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Submit button styling */
+  .add-snippet-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-snippet-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .add-snippet-container {
+      padding: 1.5rem;
+    }
+  
+    .add-snippet-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .add-snippet-form .input-group input,
+    .add-snippet-form textarea {
+      padding: 0.7rem;
+    }
+  
+    .add-snippet-button {
+      padding: 0.8rem;
+    }
+  }
+  

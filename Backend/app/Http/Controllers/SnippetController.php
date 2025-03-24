@@ -26,6 +26,17 @@ class SnippetController extends Controller
         }
     }
 
+    public function allUserSnippets(Request $request)
+    {
+
+        try {
+            $userSnippets = Auth::user()->snippets;
+            return messageResponse(true, "Snippets related to user", 200, $userSnippets);
+        } catch (\Throwable $e) {
+            errorMessageResponse(false, "Error", $e->getMessage(), 401);
+        }
+    }
+
     public function addSnippet(Request $request)
     {
         try {
