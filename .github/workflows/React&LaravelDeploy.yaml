@@ -44,11 +44,6 @@ jobs:
           tar -czf build.tar.gz dist
         working-directory: ./  
 
-      - name: Check dist directory
-        run: |
-          ls -al ./CodeSnippetOrganizer/Frontend/dist
-        working-directory: ./CodeSnippetOrganizer/Frontend
-
       - name: Copy build to EC2
         uses: appleboy/scp-action@v0.1.4
         with:
